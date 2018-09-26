@@ -1,0 +1,105 @@
+// 公共样式初始化
+
+// 公共变量
+@main-color:#e93b3d;
+@border-color:#ccc;
+@a-color:#666;
+
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 0.16rem;
+}
+
+
+// 样式重置
+*{
+    padding: 0;
+    margin: 0;
+    // 去除移动端按住元素的时候会出现高亮背景色
+    -webkit-top-highlight-color:transparent;
+    /* 去掉所有移动端内边框 */
+    outline: none;
+    /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+    box-sizing: border-box;
+}
+img{
+    // 图片与文字对齐方式
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+    color:@a-color;
+}
+li{
+    list-style: none;
+}
+input{
+    border: 0;
+}
+
+i{
+	font-style: normal;
+}
+
+/* 公共样式 */
+
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.clearfix::after{
+	content:'';
+	display: block;
+	clear:both;
+}
+
+// 提取公因式中类名 以icon-开头 以及 包含icon-类名的，中间包含的类名要有空格
+[class^="icon-"],
+[class*=" icon-"]{
+    background-image:url(../images/sprites.png) ;
+    background-size: 2rem 2rem; 
+}
+
+
+
+.border-top{
+    border-top: 0.01rem solid @border-color;
+}
+.border-bottom{
+    border-bottom: 0.01rem solid @border-color;
+}
+.border-left{
+    border-left: 0.01rem solid @border-color;
+}
+.border-right{
+    border-right: 0.01rem solid @border-color;
+}
+
+// 底部区域
+#footer{
+    max-width: 7.5rem;
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background-color: #fff;
+    ul{
+        display: flex;
+        >li{
+            flex: 1;
+            >a{
+                display: block;
+                text-align: center;
+                >img{
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,215 @@
+/* 在首页的index.less去导入公共样式文件 */
+
+@import 'base.less';
+body{
+    max-width: 7.5rem;
+    margin: 0 auto;
+}
+// 头部区域
+#header{
+    max-width: 7.5rem;
+    margin: 0 auto;
+    padding: 0.05rem;
+    background-color: rgba(222, 24, 27, 0);
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    >.icon-logo{
+        width: 0.6rem;
+        height: 0.3rem;
+        background-position:0 -1.05rem;
+        margin-right: 0.1rem;
+    }
+    >form{
+        position: relative;
+        flex: 1;
+        input{
+            height: 0.3rem;
+            width: 100%;
+            border-radius: 0.15rem;
+            padding-left: 0.3rem;
+        }
+        .icon-search{
+            position: absolute;
+            width: 0.2rem;
+            height: 0.2rem;
+            background-position:-0.6rem -1.1rem;
+            left: 0.05rem;
+            top: 0.05rem;
+        }
+    }
+    >.login{
+        width: 0.5rem;
+        height: 0.35rem;
+        font-size: 0.14rem;
+        line-height: 0.3rem;
+        text-align: center;
+        color:#fff;
+    }
+}
+
+// 轮播图
+#slide{
+    a{
+        img{
+            width: 100%;
+        }
+    }
+    // 设置小圆点指示器的样式
+    .swiper-pagination{
+        .swiper-pagination-bullet{
+            background-color: transparent;
+            border: 0.02rem solid white;
+        }  
+        .swiper-pagination-bullet-active{
+            background-color: white;
+        }     
+    }
+}
+
+// 导航栏区域
+#nav{
+    padding: 0.1rem;
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            flex: 25%;
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: 0.4rem;
+                    height: 0.4rem;
+                }
+                p{
+                    line-height: 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+// 主体部分
+#main{
+    background-color: #ccc;
+    padding: 0.1rem;
+    margin-bottom: 0.4rem;
+    // 秒杀商品
+    .seckill{
+        background-color: #fff;
+        padding: 0.03rem 0;
+        box-shadow: 0 0 0.01rem @border-color;
+        margin-bottom: 0.1rem;
+        .title{
+            display: flex;
+            line-height: 0.3rem;
+            position: relative;
+            .naozhong{
+                width: 0.2rem;
+                height: 0.25rem;
+                margin-right: 0.1rem;
+                margin-left: 0.02rem;
+
+            }
+            .name{
+                font-size: 0.14rem;
+                color: @main-color;
+                margin-right: 0.1rem;
+            }
+            .seckill-time{
+                span{
+                    width: 0.15rem;
+                    height: 0.15rem;
+                    line-height: 0.15rem;
+                    display: inline-block;
+                    background-color: #000;
+                    color: #fff;
+                    text-align: center;
+                    &:nth-child(3n){
+                        color: #000;
+                        background-color: #fff;
+                    }
+                }
+            }
+            .more{
+                position: absolute;
+                right: 0.1rem;
+            }
+        }
+        .content{
+            >ul{
+                display: flex;
+                >li{
+                    flex: 1;
+                    // 设置li标签的下一个兄弟元素的属性
+                    &+li{
+                        border-left: 0.01rem solid @border-color;
+                    }
+                    a{
+                        // 让所有子元素居中
+                        display: block;
+                        text-align: center;
+                        img{
+                            width: 1.1rem;
+                            height: 1rem;
+                        }
+                        p{
+                            color: @main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 京东超市
+    .jd-market{
+        background-color: #fff;
+        box-shadow: 0px 0px 0.01rem @border-color; 
+        margin-bottom: 0.1rem;
+        .title{
+            border-bottom: 0.01rem solid @border-color;
+            h4{
+                color: #000;
+                font-weight: normal;
+                line-height: 0.3rem;
+                margin-left: 0.25rem;
+                position: relative;
+                &::before{
+                    content: "";
+                    width: 0.04rem;
+                    height: 0.15rem;
+                    background-color: @main-color;
+                    position: absolute;
+                    left: -0.1rem;
+                    top: 0.08rem;
+                }
+            }
+        }
+        .content{
+            display: flex;
+            .left{
+                flex: 1;
+                a{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .right{
+                flex: 1;
+                a{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
